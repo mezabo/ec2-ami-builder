@@ -1,0 +1,12 @@
+name: install docker
+description: Install docker
+schemaVersion: 1.0
+phases:
+  - name: build
+    steps:
+      - name: InstallDocker
+        action: ExecuteBash
+        inputs:
+          commands:
+          - 'yum install docker -q -y'
+          - 'systemctl start docker && systemctl enable docker'

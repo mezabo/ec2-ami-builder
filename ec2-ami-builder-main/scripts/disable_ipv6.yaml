@@ -1,0 +1,11 @@
+name: disable_ipv6
+description: Disables IPv6
+schemaVersion: 1.0
+phases:
+  - name: build
+    steps:
+      - name: DisableIPv6
+        action: ExecuteBash
+        inputs:
+          commands:
+          - 'grubby --args ipv6.disable=1 --update-kernel DEFAULT'
